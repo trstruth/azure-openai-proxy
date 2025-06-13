@@ -62,6 +62,8 @@ Update your client / provider configuration to hit `http://localhost:8081` (or w
 
 For example with [codex](https://github.com/openai/openai-codex-cli):
 
+> NOTE: ensure you define the `AZURE_API_KEY` env var wherever you are running your client. You can set it equal to a garbage value like `foo`. codex will refuse to start if this key is not defined, but it is ignored as soon as your request hits the proxy. What matters is the _presence_ of the environment variable, not the value.
+
 ```bash
 codex --provider azure \ 
       --base-url http://localhost:8081 \  # ← the proxy
